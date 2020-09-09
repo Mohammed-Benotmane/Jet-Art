@@ -8,6 +8,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Icon(Icons.filter_list)
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
