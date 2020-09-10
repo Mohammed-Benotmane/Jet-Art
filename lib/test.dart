@@ -1,15 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class Test extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _TestState createState() => _TestState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Stack(
+      appBar: AppBar(
+        title: const Text('DraggableScrollableSheet'),
+      ),
+      body: Stack(
         children: <Widget>[
           Container(
             decoration:
@@ -84,6 +88,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-
 }
