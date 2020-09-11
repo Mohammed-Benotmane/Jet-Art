@@ -128,7 +128,9 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           children: <Widget>[
                             Container(height: 7,width: 50,decoration:BoxDecoration(color:Color(0xFF104845),borderRadius: BorderRadius.circular(10)) ,),
-
+                            SizedBox(height: 15),
+                            Text("Handpicked",style: TextStyle(fontSize: 24,letterSpacing: 1.5,fontWeight: FontWeight.w500),),
+                            ListView()
                           ],
                         ),
                       ),
