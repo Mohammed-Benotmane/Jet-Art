@@ -1,5 +1,7 @@
 class Artist{
   String name;
   String photoUrl;
-  int followers;
+  double followers;
+
+  Artist({this.name,this.followers,this.photoUrl});
 }
