@@ -118,17 +118,21 @@ class _HomePageState extends State<HomePage> {
               maxChildSize: 0.85,
               builder: (BuildContext context, myscrollController) {
                 return Container(
-                  color: Colors.white,
-                  child: ListView.builder(
+                  decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40))),
+
+                  child: ListView(
                     controller: myscrollController,
-                    itemCount: 25,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                          title: Text(
-                        'Dish $index',
-                        style: TextStyle(color: Colors.black54),
-                      ));
-                    },
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(30,0,30,30),
+                        child: Column(
+                          children: <Widget>[
+                            Container(height: 7,width: 50,decoration:BoxDecoration(color:Color(0xFF104845),borderRadius: BorderRadius.circular(10)) ,),
+
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },
