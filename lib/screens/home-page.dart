@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jetart/models/art.dart';
 import 'package:jetart/models/artist.dart';
+import 'package:jetart/screens/art_detail.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     arts = [
       Art(title: "Colour valley",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://www.gossip-room.fr/wp-content/uploads/2020/04/Starry_night.jpg",artist: artists[0]),
       Art(title: "Golden bust",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/38/Attributs_de_la_peinture%2C_de_la_sculpture_et_de_l%27architecture_-_Anne_Vallayer-Coster.jpg",artist: artists[0]),
-      Art(title: "Fairytoons",description: "https://promptlings.files.wordpress.com/2016/12/636068866557187343-471764569_1wyvzik.jpg",artist: artists[0]),
+      Art(title: "Fairytoons",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://promptlings.files.wordpress.com/2016/12/636068866557187343-471764569_1wyvzik.jpg",artist: artists[0]),
     ];
   }
   @override
@@ -175,13 +176,87 @@ class _HomePageState extends State<HomePage> {
                               "Handpicked",
                               style: TextStyle(fontSize: 24, letterSpacing: 1.5, fontWeight: FontWeight.w500),
                             ),
+                            SizedBox(height: 15),
                             Container(
-                              height: MediaQuery.of(context).size.height * .4,
+                              height: 2,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  color: Colors.amberAccent, borderRadius: BorderRadius.circular(10)),
+                            ),
+                            SizedBox(height: 15),
+                            Container(
+                              height: MediaQuery.of(context).size.height * .46,
                               child: ListView.builder(itemCount: arts.length,itemBuilder: (context,index){
-                                return Card(
-
-                                ) ;
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return ArtDetail();
+                                    }));
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                                    elevation: 2,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Expanded(
+                                            flex: 3,
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(15),
+                                              child: Image.network(
+                                                arts[index].imageUrl,
+                                                fit: BoxFit.fill,
+                                                height: MediaQuery.of(context).size.height / 7,
+                                              ),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            flex: 6,
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(10.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Text(
+                                                    arts[index].title,
+                                                    overflow: TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 5),
+                                                  Text(
+                                                    arts[index].artist.name,
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.grey.shade600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
                               },),
+                            ),
+                            SizedBox(height: 50),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Top Artists",
+                                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                                ),
+                              ],
                             ),
                           ],
                         ),
