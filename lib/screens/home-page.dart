@@ -10,9 +10,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Artist> artists = [
-    Artist(name: "Mohammed Benotmane",followers: 150,photoUrl: "https://avatars0.githubusercontent.com/u/39698080?s=460&u=2e2208341e7d95c6150ed53b901850c0182f23ce&v=4"),
-    Artist(name: "Itachi Uchiha",followers: 100,photoUrl: "https://lh3.googleusercontent.com/proxy/4SjyJBR0xomMevGE6qNOPeZz89ElcAPcwCoTVHUOuk6FfNdCho8uhuP0_WnQrgxTu5rr8_jk48c0XTdnsZcoiN5HBnJRBAEN_XYkAzafQZykXNiizOA7Bu-Jd-HyudjtXvd6Nz7jkIjcwveh0S27suGSRyzYTVlE"),
-    Artist(name: "Raymond Reddington",followers: 150,photoUrl: "https://image-uniservice.linternaute.com/image/450/2/1509256305/11449743.jpg"),
+    Artist(name: "Mohammed",followers: 150,photoUrl: "https://avatars0.githubusercontent.com/u/39698080?s=460&u=2e2208341e7d95c6150ed53b901850c0182f23ce&v=4"),
+    Artist(name: "Itachi",followers: 100,photoUrl: "https://i.skyrock.net/4203/84954203/pics/3111345913_1_3_9mwxsEez.png"),
+    Artist(name: "Reddington",followers: 150,photoUrl: "https://image-uniservice.linternaute.com/image/450/2/1509256305/11449743.jpg"),
   ];
 
   List<Art> arts;
@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                     controller: myscrollController,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 30),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                         child: Column(
                           children: <Widget>[
                             Container(
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                                                       fontWeight: FontWeight.w600,
                                                     ),
                                                   ),
-                                                  SizedBox(height: 5),
+                                                  SizedBox(height: 15),
                                                   Text(
                                                     arts[index].artist.name,
                                                     style: TextStyle(
@@ -254,9 +254,39 @@ class _HomePageState extends State<HomePage> {
                               children: <Widget>[
                                 Text(
                                   "Top Artists",
-                                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                                  style: TextStyle(letterSpacing: 1,fontSize: 18, fontWeight: FontWeight.w500),
                                 ),
                               ],
+                            ),
+                            SizedBox(height: 15),
+                            Container(
+                              height: MediaQuery.of(context).size.height*.15,
+                              child: ListView.separated(
+                                separatorBuilder: (context,index){
+                                  return SizedBox(width: 50);
+                                },
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: artists.length,
+                                itemBuilder: (context,index){
+                                  return Column(
+                                    children: <Widget>[
+                                      CircleAvatar(
+                                        backgroundImage: NetworkImage(artists[index].photoUrl),
+                                        radius: 40,
+                                      ),
+                                      SizedBox(height: 7),
+                                      Text(
+                                        artists[index].name,
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade600,
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
                           ],
                         ),
