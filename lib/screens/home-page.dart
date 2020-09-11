@@ -10,9 +10,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Artist> artists = [
-    Artist(name: "Mohammed",followers: 150,photoUrl: "https://avatars0.githubusercontent.com/u/39698080?s=460&u=2e2208341e7d95c6150ed53b901850c0182f23ce&v=4"),
-    Artist(name: "Itachi",followers: 100,photoUrl: "https://i.skyrock.net/4203/84954203/pics/3111345913_1_3_9mwxsEez.png"),
-    Artist(name: "Reddington",followers: 150,photoUrl: "https://image-uniservice.linternaute.com/image/450/2/1509256305/11449743.jpg"),
+    Artist(
+        name: "Mohammed",
+        followers: 150,
+        photoUrl:
+            "https://avatars0.githubusercontent.com/u/39698080?s=460&u=2e2208341e7d95c6150ed53b901850c0182f23ce&v=4"),
+    Artist(
+        name: "Itachi",
+        followers: 100,
+        photoUrl: "https://i.skyrock.net/4203/84954203/pics/3111345913_1_3_9mwxsEez.png"),
+    Artist(
+        name: "Reddington",
+        followers: 150,
+        photoUrl: "https://image-uniservice.linternaute.com/image/450/2/1509256305/11449743.jpg"),
   ];
 
   List<Art> arts;
@@ -21,11 +31,29 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     arts = [
-      Art(title: "Colour valley",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://www.gossip-room.fr/wp-content/uploads/2020/04/Starry_night.jpg",artist: artists[0]),
-      Art(title: "Golden bust",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/38/Attributs_de_la_peinture%2C_de_la_sculpture_et_de_l%27architecture_-_Anne_Vallayer-Coster.jpg",artist: artists[0]),
-      Art(title: "Fairytoons",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://promptlings.files.wordpress.com/2016/12/636068866557187343-471764569_1wyvzik.jpg",artist: artists[0]),
+      Art(
+          title: "Colour valley",
+          description:
+              "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",
+          imageUrl: "https://www.gossip-room.fr/wp-content/uploads/2020/04/Starry_night.jpg",
+          artist: artists[0]),
+      Art(
+          title: "Golden bust",
+          description:
+              "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",
+          imageUrl:
+              "https://upload.wikimedia.org/wikipedia/commons/3/38/Attributs_de_la_peinture%2C_de_la_sculpture_et_de_l%27architecture_-_Anne_Vallayer-Coster.jpg",
+          artist: artists[0]),
+      Art(
+          title: "Fairytoons",
+          description:
+              "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",
+          imageUrl:
+              "https://promptlings.files.wordpress.com/2016/12/636068866557187343-471764569_1wyvzik.jpg",
+          artist: artists[0]),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -186,67 +214,70 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(height: 15),
                             Container(
                               height: MediaQuery.of(context).size.height * .46,
-                              child: ListView.builder(itemCount: arts.length,itemBuilder: (context,index){
-                                return GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                      return ArtDetail();
-                                    }));
-                                  },
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                                    elevation: 2,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: <Widget>[
-                                          Expanded(
-                                            flex: 3,
-                                            child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(15),
-                                              child: Image.network(
-                                                arts[index].imageUrl,
-                                                fit: BoxFit.fill,
-                                                height: MediaQuery.of(context).size.height / 7,
+                              child: ListView.builder(
+                                itemCount: arts.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                        return ArtDetail(art: arts[index]);
+                                      }));
+                                    },
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                                      elevation: 2,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Expanded(
+                                              flex: 3,
+                                              child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(15),
+                                                child: Image.network(
+                                                  arts[index].imageUrl,
+                                                  fit: BoxFit.fill,
+                                                  height: MediaQuery.of(context).size.height / 7,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Expanded(
-                                            flex: 6,
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(10.0),
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: <Widget>[
-                                                  Text(
-                                                    arts[index].title,
-                                                    overflow: TextOverflow.ellipsis,
-                                                    style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight: FontWeight.w600,
+                                            Expanded(
+                                              flex: 6,
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(10.0),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    Text(
+                                                      arts[index].title,
+                                                      overflow: TextOverflow.ellipsis,
+                                                      style: TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight: FontWeight.w600,
+                                                      ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 15),
-                                                  Text(
-                                                    arts[index].artist.name,
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      color: Colors.grey.shade600,
+                                                    SizedBox(height: 15),
+                                                    Text(
+                                                      arts[index].artist.name,
+                                                      style: TextStyle(
+                                                        fontSize: 14,
+                                                        color: Colors.grey.shade600,
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              },),
+                                  );
+                                },
+                              ),
                             ),
                             SizedBox(height: 50),
                             Row(
@@ -254,21 +285,22 @@ class _HomePageState extends State<HomePage> {
                               children: <Widget>[
                                 Text(
                                   "Top Artists",
-                                  style: TextStyle(letterSpacing: 1,fontSize: 18, fontWeight: FontWeight.w500),
+                                  style:
+                                      TextStyle(letterSpacing: 1, fontSize: 18, fontWeight: FontWeight.w500),
                                 ),
                               ],
                             ),
                             SizedBox(height: 15),
                             Container(
-                              height: MediaQuery.of(context).size.height*.15,
+                              height: MediaQuery.of(context).size.height * .15,
                               child: ListView.separated(
-                                separatorBuilder: (context,index){
+                                separatorBuilder: (context, index) {
                                   return SizedBox(width: 50);
                                 },
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 itemCount: artists.length,
-                                itemBuilder: (context,index){
+                                itemBuilder: (context, index) {
                                   return Column(
                                     children: <Widget>[
                                       CircleAvatar(
