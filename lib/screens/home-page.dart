@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    super.initState();
     arts = [
       Art(title: "Colour valley",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://www.gossip-room.fr/wp-content/uploads/2020/04/Starry_night.jpg",artist: artists[0]),
       Art(title: "Golden bust",description: "Art is an activity, the product of that activity or the idea that one has of it is deliberately directed to the senses",imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/38/Attributs_de_la_peinture%2C_de_la_sculpture_et_de_l%27architecture_-_Anne_Vallayer-Coster.jpg",artist: artists[0]),
@@ -176,7 +177,11 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Container(
                               height: MediaQuery.of(context).size.height * .4,
-                              child: ListView.builder(itemBuilder: null),
+                              child: ListView.builder(itemCount: arts.length,itemBuilder: (context,index){
+                                return Card(
+
+                                ) ;
+                              },),
                             ),
                           ],
                         ),
