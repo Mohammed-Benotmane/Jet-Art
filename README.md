@@ -11,6 +11,11 @@ JetArt is the third app of my One week challenge, It's a Flutter Art Application
 
 <img src="screenshots/s1.jpg" width="200" /> <img src="screenshots/s2.jpg" width="200" /> <img src="screenshots/s3.jpg" width="200" />
 
+## Challenge:
+* [Day 1: JetHotels](https://github.com/Mohammed-Benotmane/Jet-Hotels)
+* [Day 2: JetCoffeeShop](https://github.com/Mohammed-Benotmane/Jet-Coffee-Shop)
+* [Day 3: JetArt](https://github.com/Mohammed-Benotmane/Jet-Art)
+
 ## Tools & languages:
 * Android studio (IDE)
 * Dart (logic)
