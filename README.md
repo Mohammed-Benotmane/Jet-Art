@@ -9,7 +9,7 @@ JetArt is the third app of my One week challenge, It's a Flutter Art Application
 
 ## ScreenShots:
 
-<img src="screenshots/s1.jpg" width="200" />
+<img src="screenshots/s1.jpg" width="200" /> <img src="screenshots/s2.jpg" width="200" /> <img src="screenshots/s3.jpg" width="200" />
 
 ## Tools & languages:
 * Android studio (IDE)
