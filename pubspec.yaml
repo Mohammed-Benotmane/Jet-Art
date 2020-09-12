@@ -60,9 +60,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: KumbhSans
+    - family: Spartan
       fonts:
-        - asset: fonts/KumbhSans-Regular.ttf
+        - asset: fonts/Spartan-Medium.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -4,7 +4,6 @@ import 'package:jetart/models/art.dart';
 
 class ArtDetail extends StatefulWidget {
   Art art;
-
   ArtDetail({this.art});
 
   @override
@@ -41,10 +40,10 @@ class _ArtDetailState extends State<ArtDetail> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(widget.art.title, style: TextStyle(fontSize: 38, fontWeight: FontWeight.w500)),
+                  Text(widget.art.title, style: TextStyle(fontFamily: "Spartan",fontSize: 38, fontWeight: FontWeight.w500)),
                   SizedBox(height: 30),
                   Text(widget.art.description,
-                      style: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w400)),
+                      style: TextStyle(fontFamily: "Spartan",fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w400)),
                   SizedBox(height: 60),
                   Container(
                     child: Row(
@@ -59,12 +58,12 @@ class _ArtDetailState extends State<ArtDetail> {
                           children: <Widget>[
                             Text(
                               widget.art.artist.name,
-                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),
+                              style: TextStyle(fontFamily: "Spartan",fontSize: 16,fontWeight: FontWeight.w500),
                             ),
                             SizedBox(height: 5),
                             Text(
                               "${widget.art.artist.followers}k Followers",
-                              style: TextStyle(fontWeight: FontWeight.w500,color: Colors.grey),
+                              style: TextStyle(fontFamily: "Spartan",fontWeight: FontWeight.w500,color: Colors.grey),
                             ),
                           ],
                         ),
@@ -94,7 +93,7 @@ class _ArtDetailState extends State<ArtDetail> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          Text("Popular", style: TextStyle(color: Colors.grey.shade600)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.grey.shade600)),
                         ],
                       ),
                       Column(
@@ -116,7 +115,7 @@ class _ArtDetailState extends State<ArtDetail> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          Text("Popular", style: TextStyle(color: Colors.grey.shade600)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.grey.shade600)),
                         ],
                       ),
                       Column(
@@ -138,7 +137,7 @@ class _ArtDetailState extends State<ArtDetail> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          Text("Popular", style: TextStyle(color: Colors.grey.shade600)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.grey.shade600)),
                         ],
                       ),
                     ],

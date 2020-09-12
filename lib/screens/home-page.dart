@@ -77,10 +77,10 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(height: 70),
-                  Text("JetArt", style: TextStyle(fontSize: 36, color: Colors.white)),
+                  Text("JetArt", style: TextStyle(fontFamily: "Spartan",fontSize: 36, color: Colors.white)),
                   SizedBox(height: 20),
                   Text("An artist is not paid for his labor but for his Vision",
-                      style: TextStyle(fontSize: 14, color: Colors.white)),
+                      style: TextStyle(fontFamily: "Spartan",fontSize: 14, color: Colors.white)),
                   SizedBox(height: 40),
                   Container(
                     child: Material(
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                             radius: 30,
                           ),
                           SizedBox(height: 10),
-                          Text("Popular", style: TextStyle(color: Colors.white)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.white)),
                         ],
                       ),
                       Column(
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                             radius: 30,
                           ),
                           SizedBox(height: 10),
-                          Text("Popular", style: TextStyle(color: Colors.white)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.white)),
                         ],
                       ),
                       Column(
@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                             radius: 30,
                           ),
                           SizedBox(height: 10),
-                          Text("Popular", style: TextStyle(color: Colors.white)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.white)),
                         ],
                       ),
                       Column(
@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                             radius: 30,
                           ),
                           SizedBox(height: 10),
-                          Text("Popular", style: TextStyle(color: Colors.white)),
+                          Text("Popular", style: TextStyle(fontFamily: "Spartan",color: Colors.white)),
                         ],
                       ),
                     ],
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(height: 15),
                             Text(
                               "Handpicked",
-                              style: TextStyle(fontSize: 24, letterSpacing: 1.5, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontFamily: "Spartan",fontSize: 24, letterSpacing: 1.5, fontWeight: FontWeight.w500),
                             ),
                             SizedBox(height: 15),
                             Container(
@@ -254,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                                     Text(
                                                       arts[index].title,
                                                       overflow: TextOverflow.ellipsis,
-                                                      style: TextStyle(
+                                                      style: TextStyle(fontFamily: "Spartan",
                                                         fontSize: 18,
                                                         fontWeight: FontWeight.w600,
                                                       ),
@@ -262,7 +262,7 @@ class _HomePageState extends State<HomePage> {
                                                     SizedBox(height: 15),
                                                     Text(
                                                       arts[index].artist.name,
-                                                      style: TextStyle(
+                                                      style: TextStyle(fontFamily: "Spartan",
                                                         fontSize: 14,
                                                         color: Colors.grey.shade600,
                                                       ),
@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                                 Text(
                                   "Top Artists",
                                   style:
-                                      TextStyle(letterSpacing: 1, fontSize: 18, fontWeight: FontWeight.w500),
+                                      TextStyle(fontFamily: "Spartan", fontSize: 18, fontWeight: FontWeight.w500),
                                 ),
                               ],
                             ),
@@ -310,7 +310,7 @@ class _HomePageState extends State<HomePage> {
                                       SizedBox(height: 7),
                                       Text(
                                         artists[index].name,
-                                        style: TextStyle(
+                                        style: TextStyle(fontFamily: "Spartan",
                                           fontSize: 12,
                                           color: Colors.grey.shade600,
                                         ),
